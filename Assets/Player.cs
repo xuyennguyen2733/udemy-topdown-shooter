@@ -6,6 +6,11 @@ public class Player : MonoBehaviour
 {
     private Rigidbody rb;
 
+    [Header("Gun data")]
+    [SerializeField] private Transform gunPoint;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private GameObject bulletPrefab;
+
     [Header("Movement data")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
@@ -35,6 +40,11 @@ public class Player : MonoBehaviour
 
     private void CheckInput()
     {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 
@@ -49,6 +59,13 @@ public class Player : MonoBehaviour
         ApplyMovement();
         ApplyBodyRotation();
         ApplyTowerRotation();
+    }
+
+    private void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, gunPoint.position, gunPoint.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = gunPoint.forward * bulletSpeed;
+        Destroy(bullet, 7);
     }
 
     private void ApplyTowerRotation()
