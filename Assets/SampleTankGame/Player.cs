@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     private Rigidbody rb;
 
+    private Animator animator;
+
     [Header("Gun data")]
     [SerializeField] private Transform gunPoint;
     [SerializeField] private float bulletSpeed;
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
+       
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class Player : MonoBehaviour
     {
         UpdateAim();
         CheckInput();
+        AnimatorControllers();
     }
 
     private void CheckInput()
@@ -99,5 +104,15 @@ public class Player : MonoBehaviour
             float fixedY = aimTransform.position.y;
             aimTransform.position = new Vector3(hit.point.x, fixedY, hit.point.z);
         }
+    }
+
+    private void AnimatorControllers()
+    {
+        float xVelocity = 0;
+        float zVelocity = verticalInput;
+
+        animator.SetFloat("xVelocity", xVelocity, .1f, Time.deltaTime);
+        animator.SetFloat("zVelocity", zVelocity, .1f, Time.deltaTime);
+
     }
 }
