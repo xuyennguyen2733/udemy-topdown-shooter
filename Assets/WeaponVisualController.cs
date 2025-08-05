@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.UIElements;
 
 public class WeaponVisualController : MonoBehaviour
@@ -15,16 +17,64 @@ public class WeaponVisualController : MonoBehaviour
     [SerializeField] private Transform leftHandIKTarget;
     [SerializeField] private Transform leftHandIKHint;
 
+    [Header("Rig")]
+    private Rig rig;
+    [SerializeField] float rigIncreaseStep;
+    private bool rigShouldBeIncreased;
+    private bool rigShouldBeDecreased;
+
     private Animator animator;
 
     private void Start()
     {
         SwitchGuns(pistol);
 
-        animator = GetComponentInParent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        rig = GetComponentInChildren<Rig>();
     }
 
     private void Update()
+    {
+        CheckWeaponSwitch();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            animator.SetTrigger("reload");
+            rigShouldBeDecreased = true;
+            //rig.weight = 0;
+        }
+
+        EaseRigWeightOut();
+        EaseRigWeightIn();
+    }
+
+    private void EaseRigWeightIn()
+    {
+        if (rigShouldBeIncreased)
+        {
+            rig.weight += rigIncreaseStep * Time.deltaTime;
+            if (rig.weight >= 1)
+            {
+                rigShouldBeIncreased = false;
+            }
+        }
+    }
+
+    private void EaseRigWeightOut()
+    {
+        if (rigShouldBeDecreased)
+        {
+            rig.weight -= rigIncreaseStep * Time.deltaTime;
+            if (rig.weight <= 0)
+            {
+                rigShouldBeDecreased = false;
+            }
+        }
+    }
+
+    public void ReturnRigWeightToOne() => rigShouldBeIncreased = true;
+
+    private void CheckWeaponSwitch()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
