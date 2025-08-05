@@ -11,7 +11,7 @@ public class PlayerAnimationEvents : MonoBehaviour
         visualController = GetComponentInParent<WeaponVisualController>();
     }
 
-    public void ReloadIsOver()
+    public void ResumeRigWeightAfterAnimation()
     {
         visualController.ReturnRigWeightToOne();
     }

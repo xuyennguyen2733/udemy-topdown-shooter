@@ -62716,7 +62716,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 2
-    functionName: ReloadIsOver
+    functionName: ResumeRigWeightAfterAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

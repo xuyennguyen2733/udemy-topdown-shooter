@@ -2529,7 +2529,11 @@ MonoBehaviour:
   rifle: {fileID: 324784855}
   leftHandIKTarget: {fileID: 1976370996}
   leftHandIKHint: {fileID: 441745720}
-  rigIncreaseStep: 3.5
+  leftHandIkConstraint: {fileID: 551421107}
+  reloadRigUpSteps: 3.5
+  reloadRigDownSteps: 3.5
+  switchWeaponsRigUpSteps: 3.5
+  switchWeaponsRigDownSteps: 15
 --- !u!1 &1760681128
 GameObject:
   m_ObjectHideFlags: 0

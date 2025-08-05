@@ -14,12 +14,19 @@ public class WeaponVisualController : MonoBehaviour
     [SerializeField] private Transform shotgun;
     [SerializeField] private Transform rifle;
 
+    [Header("Left Hand IK")]
     [SerializeField] private Transform leftHandIKTarget;
     [SerializeField] private Transform leftHandIKHint;
+    [SerializeField] private TwoBoneIKConstraint leftHandIkConstraint;
 
     [Header("Rig")]
     private Rig rig;
-    [SerializeField] float rigIncreaseStep;
+    [SerializeField] private float reloadRigUpSteps;
+    [SerializeField] private float reloadRigDownSteps;
+    [SerializeField] private float switchWeaponsRigUpSteps;
+    [SerializeField] private float switchWeaponsRigDownSteps;
+    private float rigUpSteps;
+    private float rigDownSteps;
     private bool rigShouldBeIncreased;
     private bool rigShouldBeDecreased;
 
@@ -40,19 +47,26 @@ public class WeaponVisualController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             animator.SetTrigger("reload");
-            rigShouldBeDecreased = true;
+            rigUpSteps = reloadRigUpSteps;
+            rigDownSteps = reloadRigDownSteps;
+            PauseRig();
             //rig.weight = 0;
         }
 
-        EaseRigWeightOut();
-        EaseRigWeightIn();
+        EaseRigWeightDown();
+        EaseRigWeightUp();
     }
 
-    private void EaseRigWeightIn()
+    private void PauseRig()
+    {
+        rigShouldBeDecreased = true;
+    }
+
+    private void EaseRigWeightUp()
     {
         if (rigShouldBeIncreased)
         {
-            rig.weight += rigIncreaseStep * Time.deltaTime;
+            rig.weight += rigUpSteps * Time.deltaTime;
             if (rig.weight >= 1)
             {
                 rigShouldBeIncreased = false;
@@ -60,16 +74,25 @@ public class WeaponVisualController : MonoBehaviour
         }
     }
 
-    private void EaseRigWeightOut()
+    private void EaseRigWeightDown()
     {
         if (rigShouldBeDecreased)
         {
-            rig.weight -= rigIncreaseStep * Time.deltaTime;
+            rig.weight -= rigDownSteps * Time.deltaTime;
             if (rig.weight <= 0)
             {
                 rigShouldBeDecreased = false;
             }
         }
+    }
+
+    private void PlayWeaponsSwitchingAnimation(WeaponTypes weaponType)
+    {
+        rigUpSteps = switchWeaponsRigUpSteps;
+        rigDownSteps = switchWeaponsRigDownSteps;
+        PauseRig();
+        animator.SetFloat("weaponType", ((float)weaponType));
+        animator.SetTrigger("switchWeapons");
     }
 
     public void ReturnRigWeightToOne() => rigShouldBeIncreased = true;
@@ -80,26 +103,31 @@ public class WeaponVisualController : MonoBehaviour
         {
             SwitchGuns(pistol);
             SwitchAnimationLayers(1);
+            PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SwitchGuns(revolver);
             SwitchAnimationLayers(1);
+            PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SwitchGuns(autoRifle);
             SwitchAnimationLayers(1);
+            PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SwitchGuns(shotgun);
             SwitchAnimationLayers(2);
+            PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             SwitchGuns(rifle);
             SwitchAnimationLayers(3);
+            PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
         }
     }
 
@@ -141,3 +169,6 @@ public class WeaponVisualController : MonoBehaviour
         animator.SetLayerWeight(layerIndex, 1);
     }
 }
+
+
+public enum WeaponTypes { Light, Heavy}
