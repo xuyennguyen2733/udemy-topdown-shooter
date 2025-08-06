@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UIElements;
@@ -30,14 +31,18 @@ public class WeaponVisualController : MonoBehaviour
     private bool rigShouldBeIncreased;
     private bool rigShouldBeDecreased;
 
+    private bool isLockedInAction;
+
     private Animator animator;
 
     private void Start()
     {
-        SwitchGuns(pistol);
-
         animator = GetComponentInChildren<Animator>();
         rig = GetComponentInChildren<Rig>();
+
+        isLockedInAction = false;
+        //animator.SetBool("isLockedInAction", isLockedInAction);
+        SwitchGuns(pistol);
     }
 
     private void Update()
@@ -55,6 +60,12 @@ public class WeaponVisualController : MonoBehaviour
 
         EaseRigWeightDown();
         EaseRigWeightUp();
+    }
+
+    public void EndLockInAction()
+    {
+        isLockedInAction = false;
+        //animator.SetBool("isLockedInAction", isLockedInAction);
     }
 
     private void PauseRig()
@@ -95,44 +106,67 @@ public class WeaponVisualController : MonoBehaviour
         animator.SetTrigger("switchWeapons");
     }
 
-    public void ReturnRigWeightToOne() => rigShouldBeIncreased = true;
+    public void ReturnRigWeightToOne()
+    {
+        rigShouldBeIncreased = true;
+    }
 
     private void CheckWeaponSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+
+       if (!isLockedInAction)
         {
-            SwitchGuns(pistol);
-            SwitchAnimationLayers(1);
-            PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SwitchGuns(revolver);
-            SwitchAnimationLayers(1);
-            PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SwitchGuns(autoRifle);
-            SwitchAnimationLayers(1);
-            PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SwitchGuns(shotgun);
-            SwitchAnimationLayers(2);
-            PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SwitchGuns(rifle);
-            SwitchAnimationLayers(3);
-            PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                isLockedInAction = true;
+                //animator.SetBool("isLockedInAction", isLockedInAction);
+                //animator.SetBool("isLockedInAction", true);
+                SwitchGuns(pistol);
+                SwitchAnimationLayers(1);
+                PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                isLockedInAction = true;
+                //animator.SetBool("isLockedInAction", isLockedInAction);
+                //animator.SetBool("isLockedInAction", true);
+                SwitchGuns(revolver);
+                SwitchAnimationLayers(1);
+                PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                isLockedInAction = true;
+                //animator.SetBool("isLockedInAction", isLockedInAction);
+                //animator.SetBool("isLockedInAction", true);
+                SwitchGuns(autoRifle);
+                SwitchAnimationLayers(1);
+                PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                isLockedInAction = true;
+                //animator.SetBool("isLockedInAction", isLockedInAction);
+                //animator.SetBool("isLockedInAction", true);
+                SwitchGuns(shotgun);
+                SwitchAnimationLayers(2);
+                PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                isLockedInAction = true;
+                //animator.SetBool("isLockedInAction", isLockedInAction);
+                //animator.SetBool("isLockedInAction", true);
+                SwitchGuns(rifle);
+                SwitchAnimationLayers(3);
+                PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
+            }
         }
     }
 
     private void SwitchGuns(Transform gunTransform)
     {
+        
         SwitchOffGuns();
         gunTransform.gameObject.SetActive(true);
         SetLeftHandPosition(gunTransform);

@@ -15,4 +15,10 @@ public class PlayerAnimationEvents : MonoBehaviour
     {
         visualController.ReturnRigWeightToOne();
     }
+
+    public void OnActionLockEnd()
+    {
+        visualController.EndLockInAction();
+        
+    }
 }
