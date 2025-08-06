@@ -8,13 +8,19 @@ public class PlayerAimController : MonoBehaviour
     private Player player;
     private PlayerControls controls;
 
-    [Header("Aim Info")]
+    [Header("Aim Control")]
+    [SerializeField] private Transform aim;
+
+    [Header("Camera Control")]
     [SerializeField] private float minCameraDistance;
     [SerializeField] private float maxCameraDistance;
-    [SerializeField] private float aimSensitivity;
-    [SerializeField] private Transform aim;
+    [SerializeField] private Transform cameraFollowTarget;
     [SerializeField] private LayerMask aimLayerMask;
+
+    [Space]
+
     private Vector2 aimInput;
+    private RaycastHit lastKnownMouseInput;
 
     private void Start()
     {
@@ -25,7 +31,10 @@ public class PlayerAimController : MonoBehaviour
     }
     private void Update()
     {
-        aim.position = GetAimPostion();
+        aim.position = GetMouseHitInfo().point;
+        aim.position = new Vector3(aim.position.x, transform.position.y, aim.position.z);
+
+        cameraFollowTarget.position = GetDesiredCameraPostion();
     }
 
     private void AssignInputEvents()
@@ -34,34 +43,35 @@ public class PlayerAimController : MonoBehaviour
         controls.Character.Aim.canceled += context => aimInput = Vector2.zero;
     }
 
-    private Vector3 GetAimPostion()
+    private Vector3 GetDesiredCameraPostion()
     {
-        Vector3 desiredAimPosition = GetMousePosition();
-        Vector3 aimDirection = (desiredAimPosition - transform.position).normalized;
-        float aimDistanceFromPlayer = Vector3.Distance(transform.position, desiredAimPosition);
+        Vector3 desiredCameraPosition = GetMouseHitInfo().point;
+        Vector3 aimDirection = (desiredCameraPosition - transform.position).normalized;
+        float aimDistanceFromPlayer = Vector3.Distance(transform.position, desiredCameraPosition);
 
         if (aimDistanceFromPlayer > maxCameraDistance)
         {
-            desiredAimPosition = transform.position + aimDirection * maxCameraDistance;
+            desiredCameraPosition = transform.position + aimDirection * maxCameraDistance;
         }
         else if (aimDistanceFromPlayer < minCameraDistance)
         {
-            desiredAimPosition = transform.position + aimDirection * minCameraDistance;
+            desiredCameraPosition = transform.position + aimDirection * minCameraDistance;
         }
 
-        desiredAimPosition.y = transform.position.y;
+        desiredCameraPosition.y = transform.position.y;
 
-            return desiredAimPosition;
+            return desiredCameraPosition;
     }
 
-    public Vector3 GetMousePosition()
+    public RaycastHit GetMouseHitInfo()
     {
         Ray ray = Camera.main.ScreenPointToRay(aimInput);
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, aimLayerMask))
         {
-            return hitInfo.point;
+            lastKnownMouseInput = hitInfo;
+            return hitInfo;
         }
 
-        return Vector3.zero;
+        return lastKnownMouseInput;
     }
 }
