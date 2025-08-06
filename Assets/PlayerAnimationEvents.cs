@@ -18,7 +18,7 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     public void OnActionLockEnd()
     {
-        visualController.EndLockInAction();
+        visualController.SetLockInAction(false);
         
     }
 }

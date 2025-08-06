@@ -39,10 +39,14 @@ public class WeaponVisualController : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         rig = GetComponentInChildren<Rig>();
-
-        isLockedInAction = false;
-        //animator.SetBool("isLockedInAction", isLockedInAction);
+        SetLockInAction(false);
         SwitchGuns(pistol);
+    }
+
+    public void SetLockInAction(bool isLocked)
+    {
+        isLockedInAction = isLocked;
+        animator.SetBool("isLockedInAction", isLockedInAction);
     }
 
     private void Update()
@@ -54,7 +58,7 @@ public class WeaponVisualController : MonoBehaviour
             animator.SetTrigger("reload");
             rigUpSteps = reloadRigUpSteps;
             rigDownSteps = reloadRigDownSteps;
-            PauseRig();
+            rigShouldBeDecreased = true;
             //rig.weight = 0;
         }
 
@@ -62,16 +66,6 @@ public class WeaponVisualController : MonoBehaviour
         EaseRigWeightUp();
     }
 
-    public void EndLockInAction()
-    {
-        isLockedInAction = false;
-        //animator.SetBool("isLockedInAction", isLockedInAction);
-    }
-
-    private void PauseRig()
-    {
-        rigShouldBeDecreased = true;
-    }
 
     private void EaseRigWeightUp()
     {
@@ -101,7 +95,7 @@ public class WeaponVisualController : MonoBehaviour
     {
         rigUpSteps = switchWeaponsRigUpSteps;
         rigDownSteps = switchWeaponsRigDownSteps;
-        PauseRig();
+        rigShouldBeDecreased = true;
         animator.SetFloat("weaponType", ((float)weaponType));
         animator.SetTrigger("switchWeapons");
     }
@@ -118,45 +112,35 @@ public class WeaponVisualController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                isLockedInAction = true;
-                //animator.SetBool("isLockedInAction", isLockedInAction);
-                //animator.SetBool("isLockedInAction", true);
+                SetLockInAction(true);
                 SwitchGuns(pistol);
                 SwitchAnimationLayers(1);
                 PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                isLockedInAction = true;
-                //animator.SetBool("isLockedInAction", isLockedInAction);
-                //animator.SetBool("isLockedInAction", true);
+                SetLockInAction(true);
                 SwitchGuns(revolver);
                 SwitchAnimationLayers(1);
                 PlayWeaponsSwitchingAnimation(WeaponTypes.Light);
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                isLockedInAction = true;
-                //animator.SetBool("isLockedInAction", isLockedInAction);
-                //animator.SetBool("isLockedInAction", true);
+                SetLockInAction(true);
                 SwitchGuns(autoRifle);
                 SwitchAnimationLayers(1);
                 PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
             }
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                isLockedInAction = true;
-                //animator.SetBool("isLockedInAction", isLockedInAction);
-                //animator.SetBool("isLockedInAction", true);
+                SetLockInAction(true);
                 SwitchGuns(shotgun);
                 SwitchAnimationLayers(2);
                 PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
             }
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                isLockedInAction = true;
-                //animator.SetBool("isLockedInAction", isLockedInAction);
-                //animator.SetBool("isLockedInAction", true);
+                SetLockInAction(true);
                 SwitchGuns(rifle);
                 SwitchAnimationLayers(3);
                 PlayWeaponsSwitchingAnimation(WeaponTypes.Heavy);
