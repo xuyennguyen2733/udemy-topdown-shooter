@@ -21,4 +21,9 @@ public class PlayerAnimationEvents : MonoBehaviour
         visualController.SetLockInAction(false);
         
     }
+
+    public void SwapWeaponModels()
+    {
+        visualController.SwapWeaponsVisually();
+    }
 }

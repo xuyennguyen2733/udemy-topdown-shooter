@@ -35,12 +35,17 @@ public class WeaponVisualController : MonoBehaviour
 
     private Animator animator;
 
+    private Transform currentWeapon;
+
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
         rig = GetComponentInChildren<Rig>();
         SetLockInAction(false);
-        SwitchGuns(pistol);
+        //SwitchGuns(pistol);
+        currentWeapon = pistol;
+        currentWeapon.gameObject.SetActive(true);
+        SetLeftHandPosition(pistol);
     }
 
     public void SetLockInAction(bool isLocked)
@@ -105,6 +110,12 @@ public class WeaponVisualController : MonoBehaviour
         rigShouldBeIncreased = true;
     }
 
+    public void SwapWeaponsVisually()
+    {
+        SwitchOffGuns();
+        currentWeapon.gameObject.SetActive(true);
+    }
+
     private void CheckWeaponSwitch()
     {
 
@@ -150,11 +161,8 @@ public class WeaponVisualController : MonoBehaviour
 
     private void SwitchGuns(Transform gunTransform)
     {
-        
-        SwitchOffGuns();
-        gunTransform.gameObject.SetActive(true);
+        currentWeapon = gunTransform;
         SetLeftHandPosition(gunTransform);
-
     }
 
     private void SetLeftHandPosition(Transform gunTransform)
