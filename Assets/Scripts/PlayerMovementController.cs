@@ -21,7 +21,7 @@ public class PlayerMovementController : MonoBehaviour
     public Vector3 movementDirection;
     private float verticalVelocity;
     private bool isRunning;
-    private Vector2 moveInput;
+    public Vector2 moveInput { get; private set; }
 
     private void Start()
     {
@@ -79,7 +79,6 @@ public class PlayerMovementController : MonoBehaviour
 
         movementDirection = new Vector3(moveInput.x, 0, moveInput.y);
 
-
         ApplyGravity();
 
         if (movementDirection.magnitude > 0)
@@ -120,6 +119,11 @@ public class PlayerMovementController : MonoBehaviour
             isRunning = false;
             speed = walkSpeed;
         };
+    }
+
+    public bool isMovingBackward()
+    {
+        return Vector3.Dot(movementDirection, transform.forward) < 0;
     }
 
 }

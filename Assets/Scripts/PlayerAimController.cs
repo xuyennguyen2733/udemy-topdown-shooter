@@ -12,8 +12,14 @@ public class PlayerAimController : MonoBehaviour
     [SerializeField] private Transform aim;
 
     [Header("Camera Control")]
+    [Range(1f, 5f)]
     [SerializeField] private float minCameraDistance;
+
+    [Range(1f, 5f)]
     [SerializeField] private float maxCameraDistance;
+
+    [Range(1f,5f)]
+    [SerializeField] private float cameraSensitivity;
     [SerializeField] private Transform cameraFollowTarget;
     [SerializeField] private LayerMask aimLayerMask;
 
@@ -31,10 +37,10 @@ public class PlayerAimController : MonoBehaviour
     }
     private void Update()
     {
-        aim.position = GetMouseHitInfo().point;
-        aim.position = new Vector3(aim.position.x, transform.position.y, aim.position.z);
+        cameraFollowTarget.position = Vector3.Lerp(cameraFollowTarget.position, GetDesiredCameraPostion(), cameraSensitivity * Time.deltaTime);
 
-        cameraFollowTarget.position = GetDesiredCameraPostion();
+        Vector3 hitPoint = GetMouseHitInfo().point;
+        aim.position = new Vector3(hitPoint.x, transform.position.y, hitPoint.z);
     }
 
     private void AssignInputEvents()
@@ -45,18 +51,15 @@ public class PlayerAimController : MonoBehaviour
 
     private Vector3 GetDesiredCameraPostion()
     {
+        float actualMaxCameraDistance = player.moveController.isMovingBackward() ? minCameraDistance : maxCameraDistance;
+
         Vector3 desiredCameraPosition = GetMouseHitInfo().point;
         Vector3 aimDirection = (desiredCameraPosition - transform.position).normalized;
-        float aimDistanceFromPlayer = Vector3.Distance(transform.position, desiredCameraPosition);
 
-        if (aimDistanceFromPlayer > maxCameraDistance)
-        {
-            desiredCameraPosition = transform.position + aimDirection * maxCameraDistance;
-        }
-        else if (aimDistanceFromPlayer < minCameraDistance)
-        {
-            desiredCameraPosition = transform.position + aimDirection * minCameraDistance;
-        }
+        float desiredCameraDistance = Vector3.Distance(transform.position, desiredCameraPosition);
+        float clampedDistance = Mathf.Clamp(desiredCameraDistance, minCameraDistance, actualMaxCameraDistance);
+
+        desiredCameraPosition= transform.position + aimDirection * clampedDistance;
 
         desiredCameraPosition.y = transform.position.y;
 
