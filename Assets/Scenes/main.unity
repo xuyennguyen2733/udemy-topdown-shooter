@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33046581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_TargetTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210179867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324784855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362656327}
   - component: {fileID: 362656328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head_Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441745720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Hand_IK_hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,7 +1005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551421106}
   - component: {fileID: 551421107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Hand_IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579940007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598416195}
   - component: {fileID: 598416196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun_Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1429,7 +1429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733233680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_HintTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1471,7 +1471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757239442}
   - component: {fileID: 757239443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rig 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 762815273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Auto_Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791026852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1731,7 +1731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 808726398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_HintTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +1877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870001013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1922,7 +1922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966370940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_HintTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1953,7 +1953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105775772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_TargetTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,7 +1984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129086341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon_Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206538383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_HintTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2285,7 +2285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437776973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_TargetTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2553,7 +2553,7 @@ GameObject:
   - component: {fileID: 1655177925}
   - component: {fileID: 1655177926}
   - component: {fileID: 1655177927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c055aca93cb074f85d385e52ea9871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2029514686}
+  bulletPrefab: {fileID: 0}
   bulletSpeed: 20
   gunPoint: {fileID: 579940007}
 --- !u!114 &1655177924
@@ -2716,7 +2716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760681129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_TargetTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2840,7 +2840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976370996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Hand_IK_target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2895,11 +2895,6 @@ Transform:
   - {fileID: 624582610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2029514686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4046350100756503496, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-  m_PrefabInstance: {fileID: 642315285749447162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031554252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +2904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031554253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_HintTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2943,7 +2938,7 @@ GameObject:
   - component: {fileID: 2036825704}
   - component: {fileID: 2036825703}
   - component: {fileID: 2036825702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3045,7 +3040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2121918976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHand_TargetTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3087,63 +3082,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 324784855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &642315285749447162
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.454
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416388929645557343, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4046350100756503496, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
-      propertyPath: m_Name
-      value: Bullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7cdad224a7e002040bb73c7c9ee98052, type: 3}
 --- !u!4 &975218753502063339
 Transform:
   m_ObjectHideFlags: 0
@@ -3379,7 +3317,7 @@ GameObject:
   - component: {fileID: 8493116274826952342}
   - component: {fileID: 8277760524880643915}
   - component: {fileID: 3063459864974471706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3570,7 +3508,7 @@ GameObject:
   - component: {fileID: 3294265594037871153}
   - component: {fileID: 1754585358737200625}
   - component: {fileID: 5187334961014772305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_sniper_rifle_emission_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3588,7 +3526,7 @@ GameObject:
   - component: {fileID: 5705539777766375644}
   - component: {fileID: 6742505624977390700}
   - component: {fileID: 1037882816438607182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3716,7 +3654,7 @@ GameObject:
   - component: {fileID: 3960534331697651397}
   - component: {fileID: 4686561713210749786}
   - component: {fileID: 8349855080557470561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_shotgun_emission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3888,9 +3826,145 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1655177921}
     m_Modifications:
+    - target: {fileID: 340619586063342449, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 458517255166643351, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011557759962739904, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152813089175254967, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258880498263820019, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1279721137128136970, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
       propertyPath: m_Name
       value: Character_main
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279721137128136970, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353917080180599691, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734113781279902628, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836844176234835392, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340189605515782348, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3392577055185091671, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788717657559302870, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822604853967843768, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980712914323560813, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035171483744784777, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308265664568386926, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433277553770420277, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074619324252954943, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144880260287087359, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378406539217760150, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459791134742525983, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495344483951401551, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674321806936474748, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714179516352522470, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402476431167149347, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580621557659834828, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622748632647592911, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928941876009146711, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061323093002509179, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075583864493997655, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367759458696266687, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443398755755674474, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448719862795854882, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536335906604670285, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8744546774910677824, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3931,6 +4005,10 @@ PrefabInstance:
     - target: {fileID: 8744546774910677824, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094391526687300428, guid: 2aea51fab65ab0d41b45d02e97a236a8, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4014,7 +4092,7 @@ GameObject:
   - component: {fileID: 6761481983368688920}
   - component: {fileID: 2565253987122611669}
   - component: {fileID: 2461278605894750422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4055,7 +4133,7 @@ GameObject:
   - component: {fileID: 1671320895373897380}
   - component: {fileID: 8469768606359368023}
   - component: {fileID: 4412492090315168942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_revolver_emission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4073,7 +4151,7 @@ GameObject:
   - component: {fileID: 433713552352351833}
   - component: {fileID: 2832134046831261934}
   - component: {fileID: 1143542263917401404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_sniper_rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4091,7 +4169,7 @@ GameObject:
   - component: {fileID: 3791366945566998721}
   - component: {fileID: 2657864986747600907}
   - component: {fileID: 5284432692122465619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_rifle_emission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4182,7 +4260,7 @@ GameObject:
   - component: {fileID: 1498662440037186288}
   - component: {fileID: 989138567224603986}
   - component: {fileID: 2880949305547465698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_pistol_emission
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4200,7 +4278,7 @@ GameObject:
   - component: {fileID: 3539370985149861498}
   - component: {fileID: 3107760818391956665}
   - component: {fileID: 6395703400610844547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4218,7 +4296,7 @@ GameObject:
   - component: {fileID: 975218753502063339}
   - component: {fileID: 4196629977383286325}
   - component: {fileID: 2672513321798952602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weap_sniper_rifle_emission_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4236,4 +4314,3 @@ SceneRoots:
   - {fileID: 509960867}
   - {fileID: 1655177921}
   - {fileID: 2036825705}
-  - {fileID: 642315285749447162}
