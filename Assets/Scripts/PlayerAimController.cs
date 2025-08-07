@@ -23,7 +23,8 @@ public class PlayerAimController : MonoBehaviour
     [SerializeField] private Transform cameraFollowTarget;
     [SerializeField] private LayerMask aimLayerMask;
 
-    [Space]
+
+    public bool preciseAimEnabled { get; private set; }
 
     private Vector2 aimInput;
     private RaycastHit lastKnownMouseInput;
@@ -31,16 +32,32 @@ public class PlayerAimController : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Player>();
-
+        preciseAimEnabled = true;
         controls = player.controls;
         AssignInputEvents();
     }
     private void Update()
     {
-        cameraFollowTarget.position = Vector3.Lerp(cameraFollowTarget.position, GetDesiredCameraPostion(), cameraSensitivity * Time.deltaTime);
+        if ( Input.GetKeyDown(KeyCode.P))
+        {
+            preciseAimEnabled = !preciseAimEnabled;
+        }
+        UpdateCameraPosition();
+        UpdateAimPosition();
+    }
 
-        Vector3 hitPoint = GetMouseHitInfo().point;
-        aim.position = new Vector3(hitPoint.x, transform.position.y, hitPoint.z);
+    private void UpdateAimPosition()
+    {
+        aim.position = GetMouseHitInfo().point;
+        if (!preciseAimEnabled)
+        {
+            aim.position = new Vector3(aim.position.x, transform.position.y, aim.position.z);
+        }
+    }
+
+    private void UpdateCameraPosition()
+    {
+        cameraFollowTarget.position = Vector3.Lerp(cameraFollowTarget.position, GetDesiredCameraPostion(), cameraSensitivity * Time.deltaTime);
     }
 
     private void AssignInputEvents()
